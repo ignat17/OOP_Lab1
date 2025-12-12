@@ -64,8 +64,6 @@ class Program
         }
     }
 
-    // ========================= ДОДАТИ ПРОДУКТ ==========================
-
     static void addproduct(List<Product> list, int max)
     {
         if (list.Count >= max)
@@ -100,8 +98,6 @@ class Program
         Console.WriteLine("Продукт додано.");
     }
 
-    // ========================= ВАЛІДАЦІЯ ==========================
-
     static string validname()
     {
         Console.Write("Введiть назву продукту: ");
@@ -121,7 +117,7 @@ class Program
         Console.Write("Введiть цiну: ");
         string input = Console.ReadLine();
 
-        input = input.Replace('.', ','); // дозволяємо 12.50 і 12,50
+        input = input.Replace('.', ',');
 
         if (!decimal.TryParse(input, out decimal price))
             throw new Exception("Цiна повинна бути числом.");
@@ -157,8 +153,6 @@ class Program
         return (Category)result;
     }
 
-    // ========================= ПЕРЕГЛЯД ==========================
-
     static void viewall(List<Product> list)
     {
         if (list.Count == 0)
@@ -180,8 +174,6 @@ class Program
             i++;
         }
     }
-
-    // ========================= ПОШУК ==========================
 
     static void findproduct(List<Product> list)
     {
@@ -238,8 +230,6 @@ class Program
         }
     }
 
-    // ========================= ДЕМОНСТРАЦІЯ ПОВЕДІНКИ ==========================
-
     static void demonstrbehav(List<Product> list)
     {
         if (list.Count == 0)
@@ -293,8 +283,6 @@ class Program
         Console.WriteLine("Оновлено:");
         Console.WriteLine($"{p.Name} | {p.Category} | {p.Price} | {p.Stock}");
     }
-
-    // ========================= ВИДАЛЕННЯ ==========================
 
     static void deleteproduct(List<Product> list)
     {
